@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 html,
 body {
     padding: 0;
@@ -15,5 +16,57 @@ a {
 }
 
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
+}
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.nav_bar::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1.5px;
+    background-color: #000;
+    bottom: -5px;
+    left: 0;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+}
+
+.nav_bar:hover::after {
+    transform: scaleX(1);
+}
+.nav_bar_active::after {
+    transform: scaleX(1);
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+}
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(
+        to bottom,
+        #d16ba5,
+        #c777b9,
+        #ba83ca,
+        #aa8fd8,
+        #9a9ae1,
+        #8aa7ec,
+        #79b3f4,
+        #69bff8,
+        #52cffe,
+        #41dfff,
+        #46eefa,
+        #5ffbf1
+    );
+    border-radius: 50px;
+    z-index: 100000;
 }
